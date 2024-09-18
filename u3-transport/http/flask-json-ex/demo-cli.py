@@ -8,14 +8,14 @@ host = "13.64.52.196"  # Azure EE-250
 if len(sys.argv) > 1:
     host = sys.argv[1]
 myjson = {
-    'name' : 'prof-red',
+    'name' : 'test',
     'scores' : [56, 66, 56],
     'dp-the-best' : True
 }
 json_string = json.dumps(myjson)
 r = requests.post('http://' + host + ':5000/submit', json=myjson)
 print(f"Status Code: {r.status_code}, Response: {r.text}")
-r = requests.get('http://' + host + ':5000/check?name=prof-red')
+r = requests.get('http://' + host + ':5000/check?name=test')
 print(f"Status Code: {r.status_code}, Response: {r.text}")
 
 # r = requests.post('http://localhost:5000/submit', 
